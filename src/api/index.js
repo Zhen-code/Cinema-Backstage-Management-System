@@ -4,8 +4,17 @@ import {message} from 'antd'
 
 const BASE='';
 
-export const reqLogin=(username,password)=>ajax(BASE+'/login',{username,password},"POST");
-
+export const reqLogin=(adminName,password)=>ajax(BASE+'/login',{adminName,password},"POST");
+// 获取用户信息
+export const reqUsers=()=>ajax(BASE+'/users/get/info',{},"GET");
+// 删除用户信息
+export const reqRemoveUser=(_id)=>ajax(BASE+'/users/remove',{_id},"POST");
+// 更新用户信息
+export const reqUpdateUser=(_id,Avatar,userName,password,vip)=>ajax(BASE+'/users/info/change',{_id,Avatar,userName,password,vip},"POST");
+//添加用户
+export const reqAddUser=(userName,password,Avatar,vip)=>{
+	return ajax(BASE+'/users/add',{userName,password,Avatar,vip},"POST")
+}
 export const reqWeather=(city)=>{
 	return new Promise((resolve, reject) => {
 		const url=`http://api.map.baidu.com/telematics/v3/weather?location=${city}&output=json&ak=3p49MVra6urFRGOT9s8UBWr2`;
@@ -63,3 +72,5 @@ export const reqSeates=()=>{
 export const reqUpdateSeate=(row,num,status)=>{
 	return ajax(BASE+'/update/seatstatu',{row,num,status},"POST");
 }
+// 移除用户头像
+export const reqRmAvatar=(name)=>ajax(BASE+'/avatar/delete',{name},"POST")

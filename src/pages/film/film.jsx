@@ -106,7 +106,7 @@ class Film extends React.Component{
 	}
     render(){
     	this.title=(<Button type="primary" onClick={()=>{this.props.history.push('/filmhomepage/add-film')}}>添加影片</Button>);
-    	const {data,loading,isShow,total}=this.state;
+    	const {data,loading,total}=this.state;
         return(
     <div>
     <Card title={this.title}>

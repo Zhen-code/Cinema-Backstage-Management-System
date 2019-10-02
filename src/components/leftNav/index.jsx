@@ -39,7 +39,7 @@ class LeftNav extends React.Component{
      
     )
   }
-  componentWillMount(){
+  UNSAFE_componentWillMount(){
     // 动态获得菜单项
     this.getMenus(menuList);
   }

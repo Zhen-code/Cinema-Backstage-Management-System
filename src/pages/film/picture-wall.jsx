@@ -1,6 +1,6 @@
 import React from "react";
 import { Upload, Icon, Modal,message } from 'antd';
-import BASE_IMG_URL from "../../utils/constant";
+import {BASE_IMG_URL} from "../../utils/constant";
 import {reqRemoveImg} from "../../api";
 class PictureWall extends React.Component {
 	constructor(props) {
@@ -71,6 +71,7 @@ class PictureWall extends React.Component {
     // const img=this.getImg();
     // console.log(img);
   const { previewVisible, previewImage, fileList } = this.state;
+  console.log(previewImage)
     const uploadButton = (<div>
         <Icon type="plus" />
         <div className="ant-upload-text">Upload</div>

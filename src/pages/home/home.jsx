@@ -5,7 +5,7 @@ class Home extends React.Component{
     super(props);
     
   }
-  componentWillMount(){
+  USAFE_componentWillMount(){
  
   }
   componentDidMount(){

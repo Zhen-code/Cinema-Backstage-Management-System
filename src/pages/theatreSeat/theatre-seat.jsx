@@ -1,5 +1,5 @@
 import React from "react"
-import { Carousel,Button,Cascader, message} from 'antd';
+import { Button,Cascader, message} from 'antd';
 import "./theatre-seat.less";
 import vacancy from "../../assets/images/booked.png";
 import booked from "../../assets/images/vacancy.png";
@@ -17,7 +17,7 @@ class TheatreSeat extends React.Component{
   // 获取座位列表
   getSeates=async ()=>{
     const result=await reqSeates();
-    if(result.status==0){
+    if(result.status===0){
       const rowArr=result.data;
         var rows=rowArr.map((row,index) => {
         // console.log(row.seates);
@@ -27,7 +27,7 @@ class TheatreSeat extends React.Component{
         {
           row.seates.map((seat,index) => {
             return (
-            <img src={seat.status=="0"?booked:vacancy} alt="0" key={index}/>
+            <img src={seat.status==="0"?booked:vacancy} alt="0" key={index}/>
               )
           })
         }
@@ -43,7 +43,7 @@ class TheatreSeat extends React.Component{
   // 获取二级联表的数据
   getManageSeat=async ()=>{
   const result=await reqSeates();
-  if(result.status==0){
+  if(result.status===0){
     const allSeat=result.data;
     var options=allSeat.map((item,index) => {
       // 获取行seates个数
@@ -80,7 +80,7 @@ class TheatreSeat extends React.Component{
     const row=statu[0]
     const num=statu[1]
     const result=await reqUpdateSeate(row,num,status)
-    if(result.status==0){
+    if(result.status===0){
       message.success('座位已预定')
       this.getSeates()
     }
@@ -90,12 +90,12 @@ class TheatreSeat extends React.Component{
     const row=statu[0];
     const num=statu[1];
     const result=await reqUpdateSeate(row,num,status)
-    if(result.status==0){
+    if(result.status===0){
       message.success('座位已置空')
       this.getSeates()
     }
   }
-  componentWillMount(){
+  UNSAFE_componentWillMount(){
    this.getSeates()
    this.getManageSeat()
   }

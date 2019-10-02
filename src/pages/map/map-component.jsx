@@ -1,5 +1,5 @@
 import React from "react";
-import { Map } from 'react-amap';//导入高德地图组件
+// import { Map } from 'react-amap';//导入高德地图组件
 
  function MyMapComponent(props){
   const map = props.__map__;

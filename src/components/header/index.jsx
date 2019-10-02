@@ -1,6 +1,6 @@
 import React from "react";
 import {withRouter} from "react-router-dom";
-import { Modal, Button } from 'antd';
+import { Modal} from 'antd';
 import "./index.less";
 import LinkButton from "../link-button";
 import menuList from "../../config/menuConfig";
@@ -68,15 +68,16 @@ getTitle=(menuList)=>{
     render(){
        // 获取本地存取的用户
         const user=storageUtils.getUser();
+      
         // 获取时间
         const {currentTime}=this.state;
         // 获得标题
         const title=this.getTitle(menuList);
-        const username=user.username;
+        this.username=user.adminName
     return(
         <div className="header">
         <div className="header-top">
-          <span>欢迎&nbsp;username</span>
+          <span style={{color:'white'}}>欢迎&nbsp;{this.username}</span>
           <LinkButton onClick={this.logOut} style={{color:'#ccc'}}>退出</LinkButton>
         </div>
         <div className="header-bottom">
