@@ -47,7 +47,7 @@ class Login extends React.Component{
 		return(
         <div className="login">
         <header className="login-header">
-        	<h1>电影后台管理系统</h1>
+        	<h1 style={{color:'#fff'}}>电影后台管理系统</h1>
         </header>
         <section className="section-content">
         	<h3>用户登录</h3>
@@ -77,7 +77,7 @@ class Login extends React.Component{
                 validator: this.validateToNextPassword,
               }
               ]
-        			})(<Input prefix={<Icon type="lock"/>} placeholder="请输入密码"/>)
+        			})(<Input prefix={<Icon type="lock"/>} placeholder="请输入密码" type="password"/>)
         			
         		}
         		</Item>

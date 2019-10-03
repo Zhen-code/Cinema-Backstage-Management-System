@@ -12,6 +12,7 @@ import TheatreSeat from "../theatreSeat/theatre-seat"
 import MapSite from "../map/map";
 import EditAddress from "../map/address-input";
 import "./admin.less";
+import NotFound from "../not-found/not-found"
 const { Footer, Sider, Content } = Layout;
 class Admin extends React.Component{
     render(){
@@ -32,6 +33,7 @@ class Admin extends React.Component{
                         <Route path='/theatre-seat' component={TheatreSeat}></Route>
                         <Route path='/map' component={MapSite}></Route>
                         <Route path='/address-input' component={ EditAddress}></Route>
+                        <Route component={NotFound}></Route>
                         </Switch>
                         </Content> 
                     </Layout>

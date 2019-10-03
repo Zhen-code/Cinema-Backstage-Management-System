@@ -76,20 +76,21 @@ getTitle=(menuList)=>{
         this.username=user.adminName
     return(
         <div className="header">
-        <div className="header-top">
-          <span style={{color:'white'}}>欢迎&nbsp;{this.username}</span>
-          <LinkButton onClick={this.logOut} style={{color:'#ccc'}}>退出</LinkButton>
+        <div className="header-left">
+        <div className="local-weather">
+        <p>当前所在城市:{this.currentCity}</p>
+        <p><img src={this.dayPictureUrl} alt="weather" style={{marginRight:10}}/>天气:{this.weather}</p>
         </div>
-        <div className="header-bottom">
-          <div className="header-bottom-left">{title}</div>
-          <div className="header-bottom-right">
-            <span>当前所在城市:{this.currentCity}</span>
-            <span>时间:{currentTime}</span>
-            <img src={this.dayPictureUrl} alt="weather"/>
-            <span>天气:{this.weather}</span>
-          </div>
+        <span className="title">{title}</span>
         </div>
-      </div>
+        <div className="header-right">
+        <p>
+         <span>欢迎&nbsp;{this.username}</span>
+         <LinkButton onClick={this.logOut} style={{color:'black'}}>退出</LinkButton>
+         </p>
+         <p>时间:{currentTime}</p>
+        </div>
+        </div>
         )
     }
 }

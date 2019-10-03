@@ -2,7 +2,7 @@ import jsonp from 'jsonp'
 import ajax from './ajax'
 import {message} from 'antd'
 
-const BASE='';
+const BASE='/api';
 
 export const reqLogin=(adminName,password)=>ajax(BASE+'/login',{adminName,password},"POST");
 // 获取用户信息
