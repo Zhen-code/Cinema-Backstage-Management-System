@@ -56,5 +56,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 	location ~ /api/ {
 	    proxy_pass  http://localhost:3002;
 	}
-	当访问nginx服务器时会根据路径跳转到前台或后台
+当访问nginx服务器时会根据路径跳转到前台或后台
+
 2. 解决方法2：打包好的项目文件直接放在后台public目录下面作为静态文件使用，访问的端口号为后台端口，前后台一致
